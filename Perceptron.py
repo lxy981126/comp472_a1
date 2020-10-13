@@ -14,7 +14,7 @@ def perceptron(training, test, output):
 
 
 if __name__ == '__main__':
-    training_path = "./Assig1-Dataset/train_1.csv"#input('Enter path of training data')
-    test_path = "./Assig1-Dataset/test_with_label_1.csv"#input('Enter path of test data')
-    output_path = "./Output/PER-DS1.csv"#input('Enter path of output csv')
+    training_path = input('Enter path of training data')  # "./Assig1-Dataset/train_2.csv"
+    test_path = input('Enter path of test data')  # "./Assig1-Dataset/test_with_label_2.csv"
+    output_path = input('Enter path of output csv')  # "./Assig1-Dataset/GNB-DS2.csv"
     perceptron(training_path, test_path, output_path)
