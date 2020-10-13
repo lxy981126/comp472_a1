@@ -25,8 +25,8 @@ def output_computed_metrics(test_data, test_prediction, output_file):
     np.savetxt(file, recall, delimiter=',', fmt='%i')
     file.write('F1-measure\n')
     np.savetxt(file, f1, delimiter=',', fmt='%i')
-    file.write('Accuracy: ' + str(accuracy) + '\n')
-    file.write('Macro F1: ' + str(macro_f1) + '\n')
-    file.write('Weighted F1: ' + str(weighted_f1) + '\n')
+    file.write('Accuracy,' + str(accuracy) + '\n')
+    file.write('Macro F1,' + str(macro_f1) + '\n')
+    file.write('Weighted F1,' + str(weighted_f1) + '\n')
 
     file.close()
