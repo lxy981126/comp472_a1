@@ -23,8 +23,8 @@ def best_mlp(training, validation, test, output):
 
 
 if __name__ == '__main__':
-    training_path = "./Assig1-Dataset/train_1.csv"#input('Enter path of training data')
-    validation_path = "./Assig1-Dataset/val_1.csv"#input('Enter path of validation data')
-    test_path = "./Assig1-Dataset/test_with_label_1.csv"#input('Enter path of test data')
-    output_path = "./Output/Best-MLP-DS1.csv"#input('Enter path of output csv')
+    training_path = input('Enter path of training data')  # "./Assig1-Dataset/train_1.csv"
+    validation_path = input('Enter path of validation data')  # "./Assig1-Dataset/val_1.csv"
+    test_path = input('Enter path of test data')  # "./Assig1-Dataset/test_with_label_1.csv"
+    output_path = input('Enter path of output csv')  # "./Output/Best-MLS-DS1.csv"
     best_mlp(training_path, validation_path, test_path, output_path)
