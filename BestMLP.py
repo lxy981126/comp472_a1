@@ -13,10 +13,11 @@ def best_mlp(training, validation, test, output):
     mlp.fit(training_data[:, :-1], training_data[:, -1])
 
     params = {'activation': ['logistic', 'tanh', 'relu', 'identity'],
-              'hidden_layer_sizes': [(20, 30, 50), (30, 10, 10)],
+              'hidden_layer_sizes': [(30, 50), (10, 10, 10)],
               'solver': ['adam', 'sgd']}
-    tuned_model = GridSearchCV(estimator=mlp, param_grid=params)
+    tuned_model = GridSearchCV(estimator=mlp, param_grid=params, n_jobs=-1, cv=3)
     tuned_model.fit(validation_data[:, :-1], validation_data[:, -1])
+    print(tuned_model.best_params_)
 
     test_prediction = tuned_model.best_estimator_.predict(test_data[:, :-1])
     helper.output_computed_metrics(test_data, test_prediction, output)

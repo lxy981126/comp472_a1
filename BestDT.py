@@ -17,8 +17,9 @@ def best_decision_tree(training, validation, test, output):
               'min_samples_split': [0.01, 0.1, 0.5, 0.9, 1.0],
               'min_impurity_decrease': [0.0, 0.01, 0.1, 0.5, 0.9, 1.0],
               'class_weight': [None, 'balanced']}
-    tuned_model = GridSearchCV(estimator=dt, param_grid=params)
+    tuned_model = GridSearchCV(estimator=dt, param_grid=params, n_jobs=-1, cv=3)
     tuned_model.fit(validation_data[:, :-1], validation_data[:, -1])
+    print(tuned_model.best_params_)
 
     test_prediction = tuned_model.best_estimator_.predict(test_data[:, :-1])
     helper.output_computed_metrics(test_data, test_prediction, output)
